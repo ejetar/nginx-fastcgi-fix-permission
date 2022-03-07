@@ -1,0 +1,23 @@
+#!/usr/bin/env php
+<?php
+/**
+ * @author Guilherme Almeida Girardi <guilhermeagirardi@gmail.com>
+ * @copyright Copyright (c) 2022, Ejetar
+ * @version 1.0.0
+ * @date 2022-02-16
+ */
+
+$output = shell_exec('grep fastcgi_cache_path /etc/nginx/conf.d/vhosts/* | cut -d" " -f2');
+$paths = explode("\n", $output);
+$group = "nobody";
+$pattern = '/\/home\/(.+)\/.+/';
+
+foreach ($paths as $path) {
+	if (file_exists($path)) {
+		preg_match($pattern, $path, $matches);
+		$user = $matches[1];
+		$cmd = "chown -R $user.nobody $path & chmod -R 0770 $path";
+		echo "$cmd\n";
+		shell_exec($cmd);
+	}
+}

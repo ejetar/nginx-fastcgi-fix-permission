@@ -1,0 +1,8 @@
+/node_modules
+/vendor
+npm-debug.log
+yarn-error.log
+/.idea
+/.vscode
+rsync
+.exclude-files

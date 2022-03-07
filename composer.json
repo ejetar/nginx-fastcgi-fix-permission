@@ -1,0 +1,14 @@
+{
+    "name": "ejetar/nginx-fastcgi-fix-permission",
+    "description": "A simple way to fix cache folder permissions created by Nginx's FastCGI module.",
+    "type": "library",
+    "license": "MIT",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Guilherme Almeida Girardi",
+            "email": "guilhermeagirardi@gmail.com"
+        }
+    ],
+    "require": {}
+}
