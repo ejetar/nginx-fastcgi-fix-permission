@@ -1,0 +1,1 @@
+# nginx-fastcgi-fix-permission
