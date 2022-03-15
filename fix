@@ -16,7 +16,7 @@ foreach ($paths as $path) {
 	if (file_exists($path)) {
 		preg_match($pattern, $path, $matches);
 		$user = $matches[1];
-		$cmd = "chown -R $user.nobody $path & chmod -R 0770 $path";
+		$cmd = "chown -R $user.nobody $path && chmod -R 0770 $path";
 		echo "$cmd\n";
 		shell_exec($cmd);
 	}
